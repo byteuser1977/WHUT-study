@@ -1,0 +1,62 @@
+# WHUT-study .gitignore
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large / binary files (use Git LFS if needed)
+*.pdf
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.ico
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+.cache/
+
+# Personal / sensitive
+*.key
+*.pem
+*.env
+.env.local
+secrets/
+
+# Node / Python / build artifacts (if any)
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+dist/
+build/
+target/
+
+# Obsidian specific (optional)
+.obsidian/workspace*
+.obsidian/cache/
+
+# Keep empty directories
+!courses/**/.gitkeep
+!quick-ref/**/.gitkeep
+!exams/**/.gitkeep
+!projects/.gitkeep
+!resources/.gitkeep
