@@ -20,7 +20,7 @@ ros2 topic list                       # 有哪些话题
 ros2 topic list -t                    # 带消息类型
 ros2 topic info /话题名                # 谁在发、谁在收、消息类型、QoS
 ros2 topic echo /话题名                # 打印话题内容（看数据对不对）
-ros2 topic hz /话题名                  # ★ 实时发布频率 FPS（试题 1(2) 的答案）
+ros2 topic hz /话题名                  # ★ 实时发布频率 FPS（掉帧靠它定位）
 ros2 topic bw /话题名                  # 带宽占用
 ros2 topic pub /话题名 std_msgs/msg/String "{data: 'hi'}" -r 10   # 手动按 10Hz 发消息
 
@@ -68,7 +68,7 @@ print(img.shape)                           # (480, 640, 3) → 高, 宽, 通道�
 print(img.dtype)                           # uint8，取值 0~255
 
 # ── 切片 / ROI ──
-upper = img[0:240, :]                      # ★ 上半部分（前 240 行）—— 试题 2(2)
+upper = img[0:240, :]                      # ★ 上半部分（前 240 行）—— 切片最常用的一招
 left  = img[:, 0:320]                      # 左半部分
 roi   = img[y:y+h2, x:x+w2]                # 任意矩形区域
 img[0:50, 0:50] = 0                        # 直接改像素（抹掉左上角）
@@ -107,7 +107,7 @@ cap = cv2.VideoCapture(0)                                  # 0=默认摄像头
 if not cap.isOpened():
     print("摄像头打不开：换索引 1/2 试试，或检查是否被其他程序占用")
 ret, frame = cap.read()                    # ret 为 True 才算读到
-cv2.imwrite("photo.jpg", frame)            # ★ 保存照片 —— 试题 2(3)
+cv2.imwrite("photo.jpg", frame)            # ★ 保存照片 —— 拍照三步走的第二步
 cap.release()                              # 用完必须释放
 cv2.destroyAllWindows()
 ```
@@ -255,7 +255,7 @@ git diff --staged     # 暂存区 vs 本地仓库
 
 ---
 
-## 九、可行驶区域识别流水线（试题 3(1) 骨架）
+## 九、可行驶区域识别流水线（一步不落）
 
 ```
 原图(BGR)

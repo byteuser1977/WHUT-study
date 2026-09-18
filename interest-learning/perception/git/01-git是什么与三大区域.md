@@ -64,7 +64,7 @@
 | `git push` | 本地仓库 → 远程仓库 | 把本地提交上传到 GitHub / Gitee |
 | `git pull` | 远程仓库 → 本地仓库 + 工作区 | 先 `fetch`（下载）再 `merge`（合并），把队友的提交同步下来 |
 
-> 🎯 **试题 4(1)（5 分）标准答案，一眼可查：**
+> 🎯 **一句话记忆链，一眼可查：**
 > - `git add` —— 把**工作区**的修改放入**暂存区（Staging Area / Index）**；
 > - `git commit` —— 把**暂存区**的内容提交到**本地仓库（Local Repository）**，生成一条提交记录；
 > - `git push` —— 把**本地仓库**的提交推送到**远程仓库（Remote Repository）**。
