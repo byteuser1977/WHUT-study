@@ -28,6 +28,8 @@ WHUT-study/
 ├── projects/                 # 课程设计/实验/大作业代码
 ├── resources/                # 参考资料/教材PDF/链接索引
 └── interest-learning/        # 兴趣/社团学习（非课程）
+    ├── linux/                # Linux 入门快速教程（10 讲 + 速查表）
+    ├── perception/           # 智能巴哈·感知组学习教程（6 大类 27 讲 + 速查表）
     ├── programming/          # 编程进阶/框架/语言
     ├── design/               # UI/平面/视频剪辑
     ├── hardware/             # 单片机/嵌入式/电路
@@ -35,11 +37,18 @@ WHUT-study/
     └── competitions/         # 竞赛备战/历年题/方案
 ```
 
+## 已完成的教程
+
+| 教程 | 入口 | 规模 |
+|---|---|---|
+| Linux 入门快速教程 | [interest-learning/linux/00-大纲.md](interest-learning/linux/00-大纲.md) | 10 讲，每讲约 10 分钟 |
+| 智能巴哈·感知组学习教程 | [interest-learning/perception/00-大纲.md](interest-learning/perception/00-大纲.md) | 6 大类 27 讲，含题库对照表 |
+
 ## 使用方式
 
 ### 本地克隆
 ```bash
-git clone https://github.com/<your-username>/WHUT-study.git
+git clone https://github.com/byteuser1977/WHUT-study.git
 cd WHUT-study
 ```
 
