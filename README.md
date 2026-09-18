@@ -26,7 +26,13 @@ WHUT-study/
 │   ├── midterm/
 │   └── final/
 ├── projects/                 # 课程设计/实验/大作业代码
-└── resources/                # 参考资料/教材PDF/链接索引
+├── resources/                # 参考资料/教材PDF/链接索引
+└── interest-learning/        # 兴趣/社团学习（非课程）
+    ├── programming/          # 编程进阶/框架/语言
+    ├── design/               # UI/平面/视频剪辑
+    ├── hardware/             # 单片机/嵌入式/电路
+    ├── soft-skills/          # 沟通/演讲/项目管理
+    └── competitions/         # 竞赛备战/历年题/方案
 ```
 
 ## 使用方式
