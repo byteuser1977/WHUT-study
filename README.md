@@ -30,6 +30,7 @@ WHUT-study/
 └── interest-learning/        # 兴趣/社团学习（非课程）
     ├── linux/                # Linux 入门快速教程（10 讲 + 速查表）
     ├── perception/           # 智能巴哈·感知组学习教程（6 大类 27 讲 + 速查表）
+    ├── mechanical/           # 智能巴哈·机械组招新笔试备考（4 模块 16 讲 + 速查表）
     ├── programming/          # 编程进阶/框架/语言
     ├── design/               # UI/平面/视频剪辑
     ├── hardware/             # 单片机/嵌入式/电路
@@ -70,6 +71,21 @@ WHUT-study/
 
 > 15 条招新试题（技术类 9 小问 + 思维类 6 题）全部有对应讲次，对照表见 [00-大纲.md 第四节](interest-learning/perception/00-大纲.md)。
 
+### 🔧 WUTIB 智能巴哈·机械组招新笔试备考　`interest-learning/mechanical/`
+
+[00-大纲.md](interest-learning/mechanical/00-大纲.md) · 4 模块 16 讲 · 约 9.5 万字 · [速查表](interest-learning/mechanical/mechanical-速查表.md)
+
+面向机械组招新笔试（建模实操 50 分 + 书面简答 50 分 + 选做加分 15 分），软件基准 CATIA 2023 / ANSYS 2024 R2：
+
+| 模块 | 目录 | 讲次 | 内容 | 对应分值 |
+|---|---|---|---|---|
+| 一 | [catia/](interest-learning/mechanical/catia/) | 7 | 草图完全约束、基础特征与参考平面、**斜面草图定位**、孔与圆角、必做题完整拆解、肋与加强筋 | 必做题 50 + 加分 15 |
+| 二 | [ansys/](interest-learning/mechanical/ansys/) | 5 | 有限元是什么、Workbench 全流程、网格与求解、**车架弯曲与扭转工况**、结果解读 | 简答 1、3 |
+| 三 | [racecar-engineering/](interest-learning/mechanical/racecar-engineering/) | 3 | 开发流程与 CATIA/ANSYS 定位、EPS 与 EHB 部件、**支架与安装座设计** | 简答 2、4、5 |
+| 四 | [written-answers/](interest-learning/mechanical/written-answers/) | 1 | 五道简答题的答题框架、得分要点、丢分点、提交规范 | 简答 50 |
+
+> 13 项评分点（必做题 5 + 加分题 3 + 简答 5）全部有对应讲次，对照表见 [00-大纲.md 第四节](interest-learning/mechanical/00-大纲.md)。简答部分只给思考框架不给套话——试题明确禁止 AI 套话答案。
+
 ## 教程编写规范
 
 新建教程（或续写已有教程）必须遵循同一套骨架，保证不同主题的教程读起来是同一种东西：
@@ -87,6 +103,7 @@ WHUT-study/
 
 - 单讲 1500~3000 字（高分值重点讲可到 4000 字），**科普 → 进阶**，术语首次出现必须解释
 - 所有命令/代码必须**实际跑通**过；`cv2.imread` 一类读文件的操作必须带失败保护，否则新手看到的是 `(-215:Assertion failed)` 这种鬼报错
+- **图形软件（CATIA/ANSYS 等）的教程**：操作写成编号步骤，标清在哪个工作台、点哪个图标；凡是随版本变化的菜单名/按钮位置必须注明"以你机器上为准"，**禁止编造菜单名**
 - 相同技术事实跨讲必须口径一致（例：OpenCV 的 HSV 里 H 是 0~179，橙 = 11~25，红色跨两端 = 0~10 与 170~179）
 - 目录用 kebab-case；讲稿文件 `NN-主题.md`；速查表 `<主题>-速查表.md`
 
