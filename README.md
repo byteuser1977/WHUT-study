@@ -2,7 +2,7 @@
 
 武汉理工大学学习笔记仓库 — 课程笔记 + 车队技能学习笔记。快速复习、考前突击、知识点索引。
 
-四大学习板块：Linux 入门 → 智能巴哈感知组 → 机械组 → 电控组。统一结构、统一体量（每讲约 10 分钟），可直接跳着看某一讲。
+五大学习板块：Linux 入门 → 智能巴哈感知组 → 机械组 → 电控组 → 电气架构组。统一结构、统一体量（每讲约 10 分钟），可直接跳着看某一讲。
 
 ## 仓库结构
 
@@ -34,6 +34,7 @@ WHUT-study/
     ├── perception/           # 智能巴哈·感知组学习笔记（6 大类 27 讲 + 速查表）
     ├── mechanical/           # 智能巴哈·机械组 CATIA/ANSYS 学习笔记（4 模块 16 讲 + 速查表）
     ├── electronic-control/   # 智能巴哈·电控组 Simulink/Stateflow 学习笔记（5 模块 16 讲 + 速查表）
+    ├── electrical-architecture/ # 智能巴哈·电气架构组 配电/CAN/网络/原理图 学习笔记（5 模块 18 讲 + 速查表）
     ├── programming/          # 编程进阶/框架/语言
     ├── design/               # UI/平面/视频剪辑
     ├── hardware/             # 单片机/嵌入式/电路
@@ -51,6 +52,7 @@ WHUT-study/
 | 🤖 智能巴哈·感知组 | ROS 2、Python/OpenCV、视觉感知、Git、工程思维 | 6 大类 27 讲 | [00-大纲.md](interest-learning/perception/00-大纲.md) |
 | 🔧 智能巴哈·机械组 | CATIA 建模、ANSYS 有限元、赛车结构、线控底盘 | 4 模块 16 讲 | [00-大纲.md](interest-learning/mechanical/00-大纲.md) |
 | ⚡ 智能巴哈·电控组 | Simulink、MBD、VCU、Stateflow 状态机 | 5 模块 16 讲 | [00-大纲.md](interest-learning/electronic-control/00-大纲.md) |
+| 🔌 智能巴哈·电气架构组 | 整车配电、继电器与线束、CAN 总线、通信网络、电气原理图 | 5 模块 18 讲 | [00-大纲.md](interest-learning/electrical-architecture/00-大纲.md) |
 
 ### 📘 Linux 入门　`interest-learning/linux/`
 
@@ -112,6 +114,23 @@ WHUT-study/
 
 > 每个知识点都有对应讲次，对照表见 [00-大纲.md 第四节](interest-learning/electronic-control/00-大纲.md)。状态机设计用**父状态 `Operational` 的出边**实现"急停最高优先级"——结构保证，不靠人工排序。
 
+### 🔌 智能巴哈·电气架构组　`interest-learning/electrical-architecture/`
+
+[00-大纲.md](interest-learning/electrical-architecture/00-大纲.md) · 5 模块 18 讲 · 每讲约 10 分钟 · [速查表](interest-learning/electrical-architecture/electrical-architecture-速查表.md)
+
+从零认识一辆赛车的"血管与神经"：电从哪来、怎么分、怎么接、怎么通信。零基础可读，不需要先学过电路。
+
+| 模块 | 目录 | 讲次 | 内容 |
+|---|---|---|---|
+| 一 | [electrical-basics/](interest-learning/electrical-architecture/electrical-basics/) | 4 | 整车电气系统概览、**继电器**（引脚/常开常闭/主辅触点/续流二极管）、汇流排与分线器、**焊锡环与铜鼻子** |
+| 二 | [can-bus/](interest-learning/electrical-architecture/can-bus/) | 5 | CAN 总线基本结构、**差分信号实现**（显性/隐性/压差判决）、**报文与信号的关系**、仲裁与错误处理、**TSMaster 模拟 VCU 发报文** |
+| 三 | [network-architecture/](interest-learning/electrical-architecture/network-architecture/) | 4 | CAN/以太网/串口三方对比、传感器接入、域控制器与整车拓扑、线控执行器接入与供电 |
+| 四 | [wiring-diagram/](interest-learning/electrical-architecture/wiring-diagram/) | 4 | Visio 与 AutoCAD Electrical 入门、**供电回路设计**、**继电器逻辑回路设计**、通信网络架构图绘制 |
+| 五 | [self-check/](interest-learning/electrical-architecture/self-check/) | 1 | 重点问题自测与表述要点 |
+
+> 绘图类讲全部附**接线表 + 文字电路图 + 编号操作步骤**，不依赖软件截图也能核对；Visio / AutoCAD Electrical / TSMaster 均为 Windows 图形软件，菜单项可能随版本变化，笔记中已标注"以你机器上为准"。
+> 线控转向/制动的定义与原理在 [电控组笔记](interest-learning/electronic-control/chassis-control/01-线控转向与线控制动.md) 展开，本组只讲**电气视角**（供电冗余、信号接口、失效安全）。
+
 ## 笔记编写规范
 
 新建笔记（或续写已有笔记）必须遵循同一套骨架，保证不同主题的笔记读起来是同一种东西：
@@ -122,12 +141,13 @@ WHUT-study/
 ## 你将学到          ← 3~4 条口语化收获
 ## 分节正文          ← 恰好 1 个 💡 生活类比；1~2 个 ⚠️ 常见坑；对比信息用表格
 ## 🎯 课后练习        ← 命令行/代码类笔记用这个（Linux、感知组）
-   🎯 动手练习        ← 图形软件类笔记用这个（CATIA/ANSYS/Stateflow，机械组、电控组）
+   🎯 动手练习        ← 图形软件 / 硬件工具类笔记用这个（机械组、电控组、电气架构组）
                       两者都要求：3~6 步 + 末尾一行「✅ 你应该看到」的预期结果
 ## 本讲小结          ← Markdown 表格，4~6 行
 ```
 
-> 练习标题为什么有两种：命令行笔记的练习**可以复制运行**，叫「课后练习」；图形软件笔记的练习**必须自己操作软件**（没有可复制的东西），叫「动手练习」更准确。按类型二选一，同一套笔记内部必须统一。
+> 练习标题为什么有两种：命令行笔记的练习**可以复制运行**，叫「课后练习」；图形软件/硬件工具笔记的练习**必须自己操作**（点软件、接线、压端子，没有可复制的东西），叫「动手练习」更准确。按类型二选一，同一套笔记内部必须统一。
+> **硬件工具类笔记的额外要求**：焊接/接线/画图类课程无法在本机验证，必须附 **接线表**（端子→端子）+ **文字电路图**（ASCII 或箭头链）+ **编号操作步骤**，让读者不开软件也能核对；版本相关的菜单项标注「以你机器上为准」。
 
 硬性要求：
 
