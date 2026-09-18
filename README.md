@@ -94,7 +94,7 @@ WHUT-study/
 
 ### 本地克隆
 ```bash
-git clone https://github.com/byteuser1977/WHUT-study.git
+git clone https://gitee.com/byteuser1977/WHUT-study.git
 cd WHUT-study
 ```
 
