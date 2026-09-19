@@ -1,0 +1,62 @@
+{
+  "version": "5.0.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "road",
+      "points": [
+        [
+          100,
+          300
+        ],
+        [
+          200,
+          250
+        ],
+        [
+          400,
+          250
+        ],
+        [
+          500,
+          300
+        ],
+        [
+          500,
+          480
+        ],
+        [
+          100,
+          480
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    },
+    {
+      "label": "cone",
+      "points": [
+        [
+          300,
+          200
+        ],
+        [
+          320,
+          240
+        ],
+        [
+          280,
+          240
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "polygon",
+      "flags": {}
+    }
+  ],
+  "imagePath": "road.jpg",
+  "imageData": null,
+  "imageHeight": 480,
+  "imageWidth": 640
+}
