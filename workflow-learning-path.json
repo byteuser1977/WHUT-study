@@ -1,0 +1,129 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "WHUT-study 学习路径与笔记创建工作流",
+    "output": "workflow-learning-path.html",
+    "quality_profile": "showcase",
+    "locale": "zh-CN",
+    "visual_preset": "classic",
+    "viewBox": [1000, 2900]
+  },
+  "lanes": [
+    { "id": "prereq", "label": "前置准备" },
+    { "id": "learning", "label": "学习与实践" },
+    { "id": "authoring", "label": "笔记编写" },
+    { "id": "validation", "label": "校验与关联" },
+    { "id": "sync", "label": "同步发布" }
+  ],
+  "phases": [
+    { "id": "setup", "label": "环境搭建", "fromCol": 0, "toCol": 0 },
+    { "id": "learn", "label": "按序学习", "fromCol": 1, "toCol": 1, "variant": "emphasis" },
+    { "id": "write", "label": "撰写笔记", "fromCol": 2, "toCol": 2, "variant": "emphasis" },
+    { "id": "check", "label": "三项校验", "fromCol": 3, "toCol": 3, "variant": "security" },
+    { "id": "publish", "label": "提交同步", "fromCol": 4, "toCol": 4 }
+  ],
+  "groups": [
+    { "id": "core_modules", "label": "核心 6 大板块", "lane": "learning", "fromCol": 1, "toCol": 2, "variant": "default" },
+    { "id": "cross_refs", "label": "交叉引用规范", "lane": "authoring", "fromCol": 2, "toCol": 3, "variant": "emphasis" },
+    { "id": "quality_gate", "label": "质量关卡", "lane": "validation", "fromCol": 3, "toCol": 4, "variant": "security" }
+  ],
+  "mainPath": [
+    "install_linux",
+    "learn_linux",
+    "learn_perception",
+    "learn_electrical",
+    "learn_electronic",
+    "learn_mechanical",
+    "learn_autonomous",
+    "draft_note",
+    "write_content",
+    "add_exercises",
+    "add_summary",
+    "check_wordcount",
+    "check_skeleton",
+    "check_links_tables",
+    "add_cross_refs",
+    "commit_push"
+  ],
+  "nodes": [
+    { "id": "install_linux", "lane": "prereq", "col": 0, "type": "frontend", "label": "安装 Linux\n(Ubuntu/WSL)", "sublabel": "零依赖起步", "tag": "env", "width": 220 },
+    { "id": "learn_linux", "lane": "learning", "col": 1, "type": "backend", "label": "Linux 入门\n10 讲", "sublabel": "命令行、权限、Shell", "tag": "基础", "yOffset": -200, "width": 120 },
+    { "id": "learn_perception", "lane": "learning", "col": 1, "type": "backend", "label": "感知组\n27 讲", "sublabel": "ROS 2、OpenCV、Git", "tag": "核心", "yOffset": -120, "width": 120 },
+    { "id": "learn_electrical", "lane": "learning", "col": 1, "type": "backend", "label": "电气架构组\n18 讲", "sublabel": "CAN、配电、原理图", "tag": "核心", "yOffset": -40, "width": 140 },
+    { "id": "learn_electronic", "lane": "learning", "col": 1, "type": "backend", "label": "电控组\n16 讲", "sublabel": "Simulink、Stateflow", "tag": "核心", "yOffset": 40, "width": 140 },
+    { "id": "learn_mechanical", "lane": "learning", "col": 1, "type": "backend", "label": "机械组\n16 讲", "sublabel": "CATIA、ANSYS", "tag": "核心", "yOffset": 120, "width": 120 },
+    { "id": "learn_autonomous", "lane": "learning", "col": 1, "type": "backend", "label": "无人组\n10 讲+自测", "sublabel": "算法、ROS构建、架构", "tag": "进阶", "yOffset": 200, "width": 140 },
+    { "id": "draft_note", "lane": "authoring", "col": 2, "type": "database", "label": "新建草稿\n`NN-主题.md`", "sublabel": "按骨架创建", "tag": "起草", "yOffset": -100, "width": 160 },
+    { "id": "write_content", "lane": "authoring", "col": 2, "type": "database", "label": "编写正文\n~2000 字", "sublabel": "1个💡+1-2个⚠️", "tag": "撰写", "yOffset": -20, "width": 140 },
+    { "id": "add_exercises", "lane": "authoring", "col": 2, "type": "database", "label": "添加练习\n课后/动手二选一", "sublabel": "3-6步+✅预期", "tag": "练习", "yOffset": 60, "width": 180 },
+    { "id": "add_summary", "lane": "authoring", "col": 3, "type": "database", "label": "写小结表格\n4-6 行", "sublabel": "Markdown表格", "tag": "小结", "width": 140 },
+    { "id": "check_wordcount", "lane": "validation", "col": 3, "type": "security", "label": "校验篇幅\n1800-2600字", "sublabel": "脚本①", "tag": "校验", "yOffset": -80, "width": 160 },
+    { "id": "check_skeleton", "lane": "validation", "col": 3, "type": "security", "label": "校验骨架\n四件套齐全", "sublabel": "脚本②", "tag": "校验", "yOffset": 0, "width": 160 },
+    { "id": "check_links_tables", "lane": "validation", "col": 3, "type": "security", "label": "校验链接\n表格列数", "sublabel": "脚本③", "tag": "校验", "yOffset": 80, "width": 150 },
+    { "id": "add_cross_refs", "lane": "validation", "col": 3, "type": "messagebus", "label": "添加交叉引用\n指路既有笔记", "sublabel": "引用不重写", "tag": "关联", "yOffset": 160, "width": 180 },
+    { "id": "commit_push", "lane": "sync", "col": 4, "type": "external", "label": "Git提交推送\nupdate: xxx", "sublabel": "三方SHA一致", "tag": "发布", "yOffset": -80, "width": 180 },
+    { "id": "update_quickref", "lane": "sync", "col": 4, "type": "external", "label": "同步速查表\n单页卡片", "sublabel": "<主题>-速查表", "tag": "同步", "yOffset": 0, "width": 160 },
+    { "id": "update_outline", "lane": "sync", "col": 4, "type": "external", "label": "更新大纲索引\n讲次对照表", "sublabel": "00-大纲.md", "tag": "同步", "yOffset": 80, "width": 160 }
+  ],
+  "edges": [
+    { "from": "install_linux", "to": "learn_linux", "label": "环境就绪", "variant": "emphasis" },
+    { "from": "learn_linux", "to": "learn_perception", "label": "掌握基础命令", "role": "main" },
+    { "from": "learn_perception", "to": "learn_electrical", "label": "ROS 2 基础就绪", "role": "main" },
+    { "from": "learn_electrical", "to": "learn_electronic", "label": "CAN/通信理解", "role": "main" },
+    { "from": "learn_electronic", "to": "learn_mechanical", "label": "线控底盘原理", "role": "main" },
+    { "from": "learn_mechanical", "to": "learn_autonomous", "label": "结构/仿真基础", "role": "main", "variant": "emphasis" },
+    { "from": "learn_autonomous", "to": "draft_note", "label": "触发笔记创作", "role": "main", "variant": "emphasis" },
+    { "from": "draft_note", "to": "write_content", "role": "main" },
+    { "from": "write_content", "to": "add_exercises", "role": "main" },
+    { "from": "add_exercises", "to": "add_summary", "role": "main" },
+    { "from": "add_summary", "to": "check_wordcount", "role": "main", "route": "auto", "via": [[700, 1380], [700, 1826]] },
+    { "from": "check_wordcount", "to": "check_skeleton", "role": "main" },
+    { "from": "check_skeleton", "to": "check_links_tables", "role": "main" },
+    { "from": "check_links_tables", "to": "add_cross_refs", "role": "main" },
+    { "from": "add_cross_refs", "to": "commit_push", "label": "全部通过", "variant": "emphasis" },
+    { "from": "commit_push", "to": "update_quickref", "role": "branch" },
+    { "from": "commit_push", "to": "update_outline", "role": "branch" },
+    { "from": "check_wordcount", "to": "write_content", "label": "字数不达标", "variant": "security", "role": "error" },
+    { "from": "check_skeleton", "to": "draft_note", "label": "骨架缺项", "variant": "security", "role": "error" },
+    { "from": "check_links_tables", "to": "write_content", "label": "链接/表格错", "variant": "security", "role": "error" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "主路径：环境 → 6 大板块 → 笔记 → 三校验 → 发布",
+      "items": [
+        "Linux 零依赖先跑通，再进感知组建立 ROS 2 基础",
+        "电气→电控→机械→无人组，层层递进、各司其职",
+        "笔记按统一骨架：大纲 → 正文 → 练习 → 小结表格"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "三项硬性校验脚本",
+      "items": [
+        "① 篇幅：1800-2600 字（~10 分钟），超 3000 字算过度展开",
+        "② 骨架四件套：你将学到 / 分节正文 / 练习 / 本讲小结",
+        "③ 站内链接无失效、表格列数对齐、无禁词"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "核心约束：引用不重写 + 代码必跑通",
+      "items": [
+        "Git / 报错处理 / Prompt 已在感知组讲过，他处只指路",
+        "所有命令/代码必须实测通过；cv2.imread 类操作带失败保护",
+        "硬件类笔记必附：接线表 + 文字电路图 + 编号步骤"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "发布后自动同步三件套",
+      "items": [
+        "速查表 `<主题>-速查表.md`：单页打印卡片",
+        "大纲 `00-大纲.md`：讲次索引 + 知识点对照表",
+        "README.md 六板块总览表同步更新"
+      ]
+    }
+  ]
+}

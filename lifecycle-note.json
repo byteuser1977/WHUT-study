@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "diagram_type": "lifecycle",
+  "meta": {
+    "title": "WHUT-study 笔记生命周期",
+    "output": "lifecycle-note.html",
+    "quality_profile": "showcase",
+    "locale": "zh-CN",
+    "visual_preset": "classic",
+    "viewBox": [1400, 900]
+  },
+  "lanes": [
+    { "id": "main", "label": "主流程" },
+    { "id": "review", "label": "评审与返工" },
+    { "id": "sync", "label": "发布同步" },
+    { "id": "terminal", "label": "终态" }
+  ],
+  "states": [
+    { "id": "idea", "type": "start", "label": "选题", "sublabel": "确定讲次/知识点", "lane": "main", "col": 0, "step": "01", "tag": "触发" },
+    { "id": "draft", "type": "active", "label": "起草", "sublabel": "按骨架创建 NN-主题.md", "lane": "main", "col": 1, "step": "02", "tag": "撰写" },
+    { "id": "writing", "type": "active", "label": "编写中", "sublabel": "正文+练习+小结", "lane": "main", "col": 1, "step": "03", "tag": "撰写", "yOffset": 100 },
+    { "id": "self_check", "type": "decision", "label": "自检", "sublabel": "字数/骨架/链接", "lane": "main", "col": 2, "step": "04", "tag": "质检" },
+    { "id": "cross_ref", "type": "active", "label": "补交叉引用", "sublabel": "指路既有笔记", "lane": "review", "col": 0, "step": "05", "tag": "关联", "yOffset": -100 },
+    { "id": "peer_review", "type": "decision", "label": "同行复核", "sublabel": "车队成员过目", "lane": "review", "col": 1, "step": "06", "tag": "评审" },
+    { "id": "rework", "type": "active", "label": "按反馈修改", "sublabel": "回退到编写中", "lane": "review", "col": 1, "step": "07", "tag": "返工", "yOffset": 100 },
+    { "id": "finalize", "type": "active", "label": "定稿", "sublabel": "三项脚本全绿", "lane": "main", "col": 3, "step": "08", "tag": "通过" },
+    { "id": "commit", "type": "active", "label": "Git 提交", "sublabel": "update: xxx", "lane": "sync", "col": 1, "step": "09", "tag": "提交", "yOffset": -100 },
+    { "id": "push", "type": "success", "label": "推送远端", "sublabel": "Gitee + GitHub 三方 SHA 一致", "lane": "sync", "col": 2, "step": "10", "tag": "发布" },
+    { "id": "sync_quickref", "type": "active", "label": "同步速查表", "sublabel": "单页卡片", "lane": "sync", "col": 2, "step": "11", "tag": "同步", "yOffset": 80 },
+    { "id": "sync_outline", "type": "active", "label": "更新大纲索引", "sublabel": "讲次/知识点对照", "lane": "sync", "col": 2, "step": "12", "tag": "同步", "yOffset": 160 },
+    { "id": "published", "type": "success", "label": "已发布", "sublabel": "可被引用/检索", "lane": "terminal", "col": 0, "tag": "完成" },
+    { "id": "archived", "type": "neutral", "label": "归档/废弃", "sublabel": "内容过时/重构", "lane": "terminal", "col": 1, "tag": "终态" },
+    { "id": "abandoned", "type": "failure", "label": "放弃", "sublabel": "草稿未完成", "lane": "terminal", "col": 2, "tag": "终态" }
+  ],
+  "transitions": [
+    { "id": "t1", "from": "idea", "to": "draft", "label": "新建文件", "variant": "emphasis" },
+    { "id": "t2", "from": "draft", "to": "writing", "label": "开始撰写" },
+    { "id": "t3", "from": "writing", "to": "self_check", "label": "自认为完成", "variant": "emphasis" },
+    { "id": "t4_pass", "from": "self_check", "to": "cross_ref", "label": "三项全绿", "variant": "emphasis" },
+    { "id": "t4_fail_wc", "from": "self_check", "to": "writing", "label": "字数不达标", "variant": "security" },
+    { "id": "t4_fail_sk", "from": "self_check", "to": "draft", "label": "骨架缺项", "variant": "security" },
+    { "id": "t4_fail_link", "from": "self_check", "to": "writing", "label": "链接/表格错", "variant": "security" },
+    { "id": "t5", "from": "cross_ref", "to": "peer_review", "label": "引用补全" },
+    { "id": "t6_pass", "from": "peer_review", "to": "finalize", "label": "通过", "variant": "emphasis" },
+    { "id": "t6_fail", "from": "peer_review", "to": "rework", "label": "需修改", "variant": "security" },
+    { "id": "t7", "from": "rework", "to": "writing", "label": "按反馈改", "variant": "dashed" },
+    { "id": "t8", "from": "finalize", "to": "commit", "label": "定稿提交" },
+    { "id": "t9", "from": "commit", "to": "push", "label": "推送远端" },
+    { "id": "t10a", "from": "push", "to": "sync_quickref", "label": "并行同步" },
+    { "id": "t10b", "from": "push", "to": "sync_outline", "label": "并行同步" },
+    { "id": "t11", "from": "sync_quickref", "to": "published", "label": "同步完成" },
+    { "id": "t12", "from": "sync_outline", "to": "published", "label": "同步完成" },
+    { "id": "t_archive", "from": "published", "to": "archived", "label": "内容过时/重构", "variant": "default" },
+    { "id": "t_abandon_draft", "from": "draft", "to": "abandoned", "label": "弃稿", "variant": "security" },
+    { "id": "t_abandon_writing", "from": "writing", "to": "abandoned", "label": "弃稿", "variant": "security" },
+    { "id": "t_abandon_review", "from": "rework", "to": "abandoned", "label": "彻底放弃", "variant": "security" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "主干：选题 → 起草 → 编写 → 三项自检 → 交叉引用 → 复核 → 定稿 → 推送 → 同步三件套",
+      "items": [
+        "自检三脚本：①篇幅 1800-2600 字 ②骨架四件套 ③站内链接+表格列数",
+        "交叉引用遵循\"引用不重写\"：Git/报错/Prompt 指路感知组",
+        "复核通过才能进入定稿；反馈回退到编写中"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "发布后自动同步三件套（并行）",
+      "items": [
+        "速查表 `<主题>-速查表.md`：单页打印卡片",
+        "大纲 `00-大纲.md`：讲次索引 + 知识点对照表 + 前置指路",
+        "README.md：六板块总览表同步更新"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "三类终态",
+      "items": [
+        "✅ 已发布：可被其他笔记引用、检索、复习",
+        "📦 归档/废弃：内容过时或大版本重构，保留历史不删除",
+        "❌ 放弃：草稿/编写中/返工阶段主动终止，不进入发布流程"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "质量关卡（绿=通过 红=返工）",
+      "items": [
+        "字数关：<1800 砍铺垫砍举例；>3000 算过度展开",
+        "骨架关：缺「你将学到/分节/练习/小结」任一项直接退回",
+        "链接关：站内链接 404、表格列数错、含禁词（招新/考题/评分等）均退回"
+      ]
+    }
+  ]
+}
