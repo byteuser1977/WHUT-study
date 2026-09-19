@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 code-examples 统一运行器 - 简易菜单版 (无需 curses)
-支持在任何终端环境运行
+支持在任何终端环境运行 (Linux/WSL/Windows)
 """
 
 import os
@@ -11,7 +11,8 @@ import subprocess
 import importlib
 from pathlib import Path
 
-BASE_DIR = Path("/mnt/d/workspace/git/WHUT-study/interest-learning/code-examples")
+# 使用脚本所在目录作为基础目录，支持相对路径跨平台
+BASE_DIR = Path(__file__).parent.resolve()
 
 SAMPLES = [
     {
