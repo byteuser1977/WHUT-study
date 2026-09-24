@@ -25,6 +25,8 @@ WHUT-study/
 │   ├── algorithms/           # 算法复杂度/模板
 │   └── commands/             # 常用命令/工具
 ├── exams/                    # 往年真题/模拟题/重点整理
+│   ├── 2027-wuteb-electrical-written-exam-answers.md  # 2027 赛季 WUTEB 电气组笔试题库 · 参考答案（112 选择 + 68 判断 + 17 实验题代码）
+│   ├── c-language-basics.md                          # C 语言基础综合练习（112 选择 + 68 判断 + 17 编程题）
 │   ├── midterm/
 │   └── final/
 ├── projects/                 # 课程设计/实验/大作业代码
