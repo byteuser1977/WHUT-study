@@ -2,7 +2,7 @@
 
 武汉理工大学学习笔记仓库 — 课程笔记 + 车队技能学习笔记。快速复习、考前突击、知识点索引。
 
-六大学习板块：Linux 入门 → 智能巴哈感知组 → 机械组 → 电控组 → 电气架构组 → 无人组。统一结构、统一体量（每讲约 10 分钟），可直接跳着看某一讲。
+七大学习板块：Linux 入门 → 智能巴哈感知组 → 机械组 → 电控组 → 电气架构组 → 无人组 → 规控组。统一结构、统一体量（每讲约 10 分钟），可直接跳着看某一讲。
 
 ## 仓库结构
 
@@ -38,6 +38,7 @@ WHUT-study/
     ├── electronic-control/   # 智能巴哈·电控组 Simulink/Stateflow 学习笔记（5 模块 16 讲 + 速查表）
     ├── electrical-architecture/ # 智能巴哈·电气架构组 配电/CAN/网络/原理图 学习笔记（5 模块 18 讲 + 速查表）
     ├── autonomous-driving/   # 智能巴哈·无人组 算法/ROS 构建/自动驾驶架构 学习笔记（3 模块 10 讲 + 自测 + 速查表）
+    ├── wutib-planning-control/ # 智能巴哈·规控组 控制基础/技术工具链/Stanley/系统架构（4 讲 + 速查表）
     ├── programming/          # 编程进阶/框架/语言
     ├── design/               # UI/平面/视频剪辑
     ├── hardware/             # 单片机/嵌入式/电路
@@ -57,6 +58,7 @@ WHUT-study/
 | ⚡ 智能巴哈·电控组 | Simulink、MBD、VCU、Stateflow 状态机 | 5 模块 16 讲 | [00-大纲.md](interest-learning/electronic-control/00-大纲.md) |
 | 🔌 智能巴哈·电气架构组 | 整车配电、继电器与线束、CAN 总线、通信网络、电气原理图 | 5 模块 18 讲 | [00-大纲.md](interest-learning/electrical-architecture/00-大纲.md) |
 | 🧭 智能巴哈·无人组 | 算法与复杂度、ROS 构建与 CMakeLists、自动驾驶软件架构与数据流、感知误检应对 | 3 模块 10 讲 + 自测 | [00-大纲.md](interest-learning/autonomous-driving/00-大纲.md) |
+| 🎯 智能巴哈·规控组 | 开环闭环控制、技术工具链、Stanley 横向控制、Frenet 与系统架构 | 4 讲 + 速查表 | [00-大纲.md](interest-learning/wutib-planning-control/00-大纲.md) |
 
 ### 📘 Linux 入门　`interest-learning/linux/`
 
@@ -151,6 +153,22 @@ WHUT-study/
 > **本组与既有笔记的分工**：`perception/ros2/` 讲的是 **Python 包**（`setup.py`），本组模块二补上 **C++ 包**（`ament_cmake` + `CMakeLists.txt`）这一半，两处互相指路。
 > 前置知识（Linux、ROS 2 基础、感知算法、CAN/线控）集中列在 [00-大纲.md 第 5 节](interest-learning/autonomous-driving/00-大纲.md)，不在本组重复展开。
 > 模块一、二的练习是**代码类**（可复制运行）；模块三、四是**画图/分析类**（自己动手画与推）。
+
+### 🎯 智能巴哈·规控组　`interest-learning/wutib-planning-control/`
+
+[00-大纲.md](interest-learning/wutib-planning-control/00-大纲.md) · 4 讲 + 速查表 · 每讲约 10 分钟
+
+控制理论 + 工具链 + Stanley 算法 + 系统架构。**已有笔记讲过的一律只做指路，不重复讲**（ROS 2、SSH、Git、自动驾驶架构都有现成的）。
+
+| 讲 | 主题 | 内容 |
+|---|---|---|
+| 01 | [控制基础-开环与闭环](interest-learning/wutib-planning-control/01-控制基础-开环与闭环.md) | 开环/闭环对比、反馈机制、强化学习与控制的联系 |
+| 02 | [技术工具链](interest-learning/wutib-planning-control/02-技术工具链.md) | ROS 2 术语速查、SSH 网线直连、双系统 vs 虚拟机、Git/GitHub（引用为主） |
+| 03 | [Stanley 横向控制算法](interest-learning/wutib-planning-control/03-Stanley横向控制算法.md) | 带阻尼 Stanley 原理、完整数学公式、代码逐行对照、参数调优 |
+| 04 | [自动驾驶系统架构与规控](interest-learning/wutib-planning-control/04-自动驾驶系统架构与规控.md) | Frenet 坐标系、DP 代价设计、传感器数据流、信号延迟应对、A3/A5 自主驾驶 |
+
+> **本组与既有笔记的分工**：ROS 2 → `perception/ros2/`；SSH → `linux/09`；Git → `perception/git/01-04`；自动驾驶架构数据流 → `autonomous-architecture/01`。本组新写的是控制理论、Stanley 算法、Frenet、DP 代价这些**无人组和感知组都没讲过**的内容。
+> 速查表：[wutib-planning-control-速查表.md](interest-learning/wutib-planning-control/wutib-planning-control-速查表.md)
 
 ## 笔记编写规范
 
