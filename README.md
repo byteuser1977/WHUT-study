@@ -88,7 +88,7 @@ WHUT-study/
 
 ### 🤖 智能巴哈·感知组　`interest-learning/perception/`
 
-[00-大纲.md](interest-learning/perception/00-大纲.md) · 6 大类 27 讲 · 约 17.4 万字 · [速查表](interest-learning/perception/perception-速查表.md)
+[00-大纲.md](interest-learning/perception/00-大纲.md) · 6 大类 27 讲 · 约 2.5 万字 · [速查表](interest-learning/perception/perception-速查表.md)
 
 从科普到进阶：环境 → 工具 → 框架 → 核心能力 → 工程实战。
 
