@@ -2,7 +2,7 @@
 
 武汉理工大学学习笔记仓库 — 课程笔记 + 车队技能学习笔记。快速复习、考前突击、知识点索引。
 
-七大学习板块，统一结构、统一体量（每讲约 10 分钟），可直接跳着看某一讲。推荐学习路径：
+七大学习板块 + 英语四级独立板块，统一结构、统一体量（每讲约 10 分钟），可直接跳着看某一讲。推荐学习路径：
 
 ```text
 第 1 步  Linux 入门          ← 零基础，命令行、文件、权限、网络
@@ -17,6 +17,8 @@
         └─ 规控组        开环闭环控制 / Stanley 路径跟踪 / Frenet / 系统规控
                           （需先有 Linux + ROS 2 + Git 基础）
 ```
+
+英语四级（CET-4）不走上面的车队路径，是可随时插入的独立板块：`interest-learning/cet4/`（8 讲 + 速查表）。
 
 ## 仓库结构
 
@@ -53,6 +55,7 @@ WHUT-study/
     ├── electrical-architecture/ # 智能巴哈·电气架构组 配电/CAN/网络/原理图 学习笔记（5 模块 18 讲 + 速查表）
     ├── autonomous-driving/   # 智能巴哈·无人组 算法/ROS 构建/自动驾驶架构 学习笔记（3 模块 10 讲 + 自测 + 速查表）
     ├── wutib-planning-control/ # 智能巴哈·规控组 控制基础/技术工具链/Stanley/系统架构（4 讲 + 速查表）
+    ├── cet4/                  # 英语四级 词汇/语法/听力/阅读/写作/翻译/复盘（8 讲 + 速查表）
     ├── programming/          # 编程进阶/框架/语言
     ├── design/               # UI/平面/视频剪辑
     ├── hardware/             # 单片机/嵌入式/电路
@@ -73,6 +76,7 @@ WHUT-study/
 | 🔌 智能巴哈·电气架构组 | 整车配电、继电器与线束、CAN 总线、通信网络、电气原理图 | 5 模块 18 讲 | [00-大纲.md](interest-learning/electrical-architecture/00-大纲.md) |
 | 🧭 智能巴哈·无人组 | 算法与复杂度、ROS 构建与 CMakeLists、自动驾驶软件架构与数据流、感知误检应对 | 3 模块 10 讲 + 自测 | [00-大纲.md](interest-learning/autonomous-driving/00-大纲.md) |
 | 🎯 智能巴哈·规控组 | 开环闭环控制、技术工具链、Stanley 横向控制、Frenet 与系统架构 | 4 讲 + 速查表 | [00-大纲.md](interest-learning/wutib-planning-control/00-大纲.md) |
+| 📗 英语四级 | 词汇、语法长难句、听力、阅读、写作、汉译英、复盘冲刺 | 8 讲 + 速查表 | [00-大纲.md](interest-learning/cet4/00-大纲.md) |
 
 ### 📘 Linux 入门　`interest-learning/linux/`
 
@@ -183,6 +187,21 @@ WHUT-study/
 
 > **本组与既有笔记的分工**：ROS 2 → `perception/ros2/`；SSH → `linux/09`；Git → `perception/git/01-04`；自动驾驶架构数据流 → `autonomous-architecture/01`。本组新写的是控制理论、Stanley 算法、Frenet、DP 代价这些**无人组和感知组都没讲过**的内容。
 > 速查表：[wutib-planning-control-速查表.md](interest-learning/wutib-planning-control/wutib-planning-control-速查表.md)
+
+### 📗 英语四级　`interest-learning/cet4/`
+
+[00-大纲.md](interest-learning/cet4/00-大纲.md) · 8 讲 · 每讲约 10 分钟（正文 6 + 练习 4）· [速查表](interest-learning/cet4/cet4-速查表.md)
+
+独立板块：零费用、零安装，不依赖车队路径的任何前置。词汇与语法是地基，听力 + 阅读占 70%，写作与翻译各 15%，最后一讲做复盘与全流程冲刺。
+
+| 讲 | 主题 | 讲 | 主题 |
+|---|---|---|---|
+| 01 | [四级概览与备考规划](interest-learning/cet4/01-四级概览与备考规划.md) | 05 | [阅读理解三类题型解法](interest-learning/cet4/05-阅读理解三类题型解法.md) |
+| 02 | [词汇记忆与高频词群](interest-learning/cet4/02-词汇记忆与高频词群.md) | 06 | [写作结构与功能句型](interest-learning/cet4/06-写作结构与功能句型.md) |
+| 03 | [语法核心与长难句拆解](interest-learning/cet4/03-语法核心与长难句拆解.md) | 07 | [汉译英段落翻译技巧](interest-learning/cet4/07-汉译英段落翻译技巧.md) |
+| 04 | [听力理解与精听方法](interest-learning/cet4/04-听力理解与精听方法.md) | 08 | [冲刺节奏与复盘自测](interest-learning/cet4/08-冲刺节奏与复盘自测.md) |
+
+> 全部结构数字（占比、时长、题量）以 [00-大纲](interest-learning/cet4/00-大纲.md) 与第 01 讲为准，其他讲只引用不重印。
 
 ## 笔记编写规范
 
